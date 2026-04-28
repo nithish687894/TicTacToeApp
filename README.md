@@ -13,6 +13,3 @@
 
 2. Run:
    java src.TicTacToe
-
-## Author
-Nithishkumar S
