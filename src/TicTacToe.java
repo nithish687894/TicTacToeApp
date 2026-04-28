@@ -1,35 +1,14 @@
-public static boolean checkWin(char player) {
+public static boolean checkDraw() {
 
-    // Row check
-    for (int i = 0; i < 9; i += 3) {
-        if (board[i] == player &&
-            board[i + 1] == player &&
-            board[i + 2] == player) {
-            return true;
+    // Check all cells
+    for (int i = 0; i < board.length; i++) {
+
+        // If any cell is not filled → not draw
+        if (board[i] != 'X' && board[i] != 'O') {
+            return false;
         }
     }
 
-    // Column check
-    for (int i = 0; i < 3; i++) {
-        if (board[i] == player &&
-            board[i + 3] == player &&
-            board[i + 6] == player) {
-            return true;
-        }
-    }
-
-    // Diagonal check
-    if (board[0] == player &&
-        board[4] == player &&
-        board[8] == player) {
-        return true;
-    }
-
-    if (board[2] == player &&
-        board[4] == player &&
-        board[6] == player) {
-        return true;
-    }
-
-    return false;
+    // All cells filled → draw
+    return true;
 }
